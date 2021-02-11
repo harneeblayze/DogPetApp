@@ -48,7 +48,7 @@ class DogDetailFragment : Fragment() {
             dog?.let {
                 dogdetailbreed.text = dog.dogBreed
                 dogdetailtemprament.text = dog.temperament
-                dogdetailgroup.text = dog.lifeSpan
+                dogdetailgroup.text = dog.life_span
             }
         })
 

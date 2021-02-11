@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dogpetapp.R
 import com.example.dogpetapp.model.DogBreed
+import com.example.dogpetapp.util.getProgressDrawable
+import com.example.dogpetapp.util.loadImage
 import kotlinx.android.synthetic.main.dog_eachitem.view.*
 import java.util.zip.Inflater
 
@@ -22,7 +24,8 @@ class DogListAdapter(var dogList:List<DogBreed>, val dogListener: DogListener):R
     override fun onBindViewHolder(holder: DogListViewHolder, position: Int) {
        val dogitem = dogList[position]
         holder.dog_name.text = dogitem.dogBreed
-        holder.lifespan.text = dogitem.lifeSpan
+        holder.lifespan.text = dogitem.life_span
+        holder.image.loadImage(dogitem.imageUrl, getProgressDrawable(holder.image.context))
     }
 
     override fun getItemCount() = dogList.size
